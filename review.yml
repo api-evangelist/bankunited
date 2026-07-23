@@ -1,0 +1,102 @@
+aid: bankunited
+name: BankUnited
+review:
+  question: Does BankUnited expose a public first-party developer API, a downloadable OpenAPI spec, or FDX/CFPB-1033 data access?
+  answer: partial
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    BankUnited, N.A. operates a genuine first-party developer portal branded
+    the "API Experience Hub" at developer.bankunited.com, which returned
+    HTTP 200 (root https://developer.bankunited.com redirects to
+    /aeh/s/ and https://developer.bankunited.com/s/ also resolves 200). The
+    portal is a Salesforce Experience Cloud site fronting a MuleSoft Anypoint
+    Exchange API catalog: the page markup and Content-Security-Policy reference
+    anypoint.mulesoft.com / exchange2-asset-manager S3 buckets, plus
+    self-service registration ("Register"), OAuth application sections, and API
+    "contracts" — the standard Anypoint API Community Manager developer-portal
+    stack. However, the API catalog and any OpenAPI/RAML specifications are
+    gated behind portal registration/login (a JavaScript-rendered SPA with a
+    login page at /aeh/s/login, HTTP 200); no anonymous API list, API reference,
+    or downloadable specification is publicly exposed. No verbatim spec could
+    therefore be harvested. There is no documented FDX (Financial Data Exchange)
+    participation and no published CFPB Section 1033 / personal-financial-data
+    posture. Per the Open Banking Tracker entry, BankUnited has "No API products
+    listed" for direct public access and consumer account data is reached
+    through third-party aggregators (Plaid, etc.). BankUnited maintains a
+    GitHub organization (github.com/bankunited, "BankUnited N.A.", Miami Lakes
+    FL) with no public repositories. Auth model for the gated APIs is OAuth 2.0
+    (MuleSoft-provisioned client credentials via the portal), inferred from the
+    portal's OAuth application provisioning; specific grant types are not
+    publicly documented.
+  posture:
+    firstPartyDeveloperPortal: true
+    developerPortalURL: https://developer.bankunited.com/s/
+    portalConfirmedHttp200: true
+    portalStack: Salesforce Experience Cloud + MuleSoft Anypoint API Community Manager
+    catalogPublic: false
+    openapiPubliclyDownloadable: false
+    specHarvested: false
+    fdxParticipant: false
+    section1033PosturePublished: false
+    aggregatorAccess: true
+    aggregatorsNoted:
+      - Plaid
+    authModel: OAuth2 (MuleSoft-provisioned; behind portal registration)
+    githubOrganization: https://github.com/bankunited
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: gated
+      note: >-
+        API Experience Hub is MuleSoft-backed (REST/RAML-style APIs typical of
+        Anypoint), but no endpoint, base URL, or reference is publicly exposed
+        without portal registration/login.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket surface is documented publicly.
+  probes:
+    - url: https://developer.bankunited.com
+      status: 200
+      note: Redirects to https://developer.bankunited.com/aeh/s/ — title "API Experience Hub".
+    - url: https://developer.bankunited.com/s/
+      status: 200
+      note: API Experience Hub developer portal (Salesforce Experience Cloud SPA).
+    - url: https://developer.bankunited.com/aeh/s/login
+      status: 200
+      note: Portal login page.
+    - url: https://api.bankunited.com
+      status: 0
+      note: DNS does not resolve — no such host.
+    - url: https://www.bankunited.com
+      status: 200
+      note: Corporate website.
+    - url: https://github.com/bankunited
+      status: 200
+      note: BankUnited N.A. GitHub organization, no public repositories.
+sources:
+  - url: https://developer.bankunited.com/s/
+    type: DeveloperPortal
+    note: First-party "API Experience Hub" — MuleSoft/Salesforce developer portal, catalog gated behind registration.
+  - url: https://www.openbankingtracker.com/provider/bankunited-na
+    type: Reference
+    note: States "No API products listed" for direct public access; aggregator access via Plaid/Tink/TrueLayer; no FDX mention.
+  - url: https://www.bankunited.com/about-us
+    type: Website
+    note: Charter/ownership facts — national bank (N.A.), BankUnited Inc. (NYSE BKU), Miami Lakes FL, ~$35B assets.
+  - url: https://github.com/bankunited
+    type: GitHubOrganization
+    note: BankUnited N.A. organization, no public repositories.
+actions:
+  apisYmlUpdated: true
+  openapiHarvested: false
+  reason: |
+    A real first-party developer portal was confirmed (HTTP 200, "API
+    Experience Hub", MuleSoft Anypoint + Salesforce Experience Cloud), so the
+    portal is recorded as a single honest apis[] entry plus DeveloperPortal /
+    Portal common links. No OpenAPI/RAML was harvested because the catalog and
+    specifications require portal registration/login and are not publicly
+    downloadable. FDX and CFPB-1033 fields are recorded false because neither is
+    documented; aggregator-based consumer access is noted honestly.

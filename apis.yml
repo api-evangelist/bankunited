@@ -1,0 +1,71 @@
+aid: bankunited
+url: https://raw.githubusercontent.com/api-evangelist/bankunited/refs/heads/main/apis.yml
+name: BankUnited
+kind: company
+description: >-
+  BankUnited, N.A. is a national bank (OCC-chartered National Association) and
+  the principal subsidiary of BankUnited, Inc. (NYSE: BKU), a bank holding
+  company headquartered in Miami Lakes, Florida. With roughly $35 billion in
+  total assets and banking centers across Florida, the New York metro area,
+  Dallas, Atlanta, New Jersey and North Carolina, it is a mid-size regional
+  commercial and consumer bank focused on business banking, commercial lending
+  and treasury/depository services. On the open-finance front, BankUnited runs a
+  first-party developer portal branded the "API Experience Hub"
+  (developer.bankunited.com), a Salesforce Experience Cloud site fronting a
+  MuleSoft Anypoint Exchange catalog with self-service registration, OAuth
+  application provisioning and API contracts; the specific API products and any
+  OpenAPI specifications sit behind portal registration/login rather than being
+  openly downloadable. No FDX-conformant public data-access API or published
+  CFPB Section 1033 posture is documented; consumer-permissioned account data is
+  reached primarily through third-party aggregators (e.g. Plaid) rather than a
+  public first-party consumer data API.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- United States
+- Regional Bank
+- Commercial Banking
+- Open Finance
+- Developer Portal
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis:
+- aid: bankunited:bankunited-api-experience-hub
+  name: BankUnited API Experience Hub
+  description: >-
+    BankUnited's first-party developer portal ("API Experience Hub"), a
+    Salesforce Experience Cloud site backed by MuleSoft Anypoint Exchange.
+    Provides self-service developer registration, OAuth application
+    provisioning and API contract management. The underlying API catalog and
+    any OpenAPI/RAML specifications require portal registration/login and are
+    not publicly downloadable; no anonymous API reference is exposed.
+  humanURL: https://developer.bankunited.com/s/
+  properties:
+  - type: Documentation
+    url: https://developer.bankunited.com/s/
+  - type: SignUp
+    url: https://developer.bankunited.com/aeh/s/login
+common:
+- type: Website
+  url: https://www.bankunited.com/
+- type: DeveloperPortal
+  url: https://developer.bankunited.com/s/
+- type: Portal
+  url: https://developer.bankunited.com/aeh/s/
+- type: GitHubOrganization
+  url: https://github.com/bankunited
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bankunited
+- type: Blog
+  url: https://www.bankunited.com/resource-corner
+- type: TermsOfService
+  url: https://www.bankunited.com/legal
+- type: PrivacyPolicy
+  url: https://www.bankunited.com/privacy
+- type: Security
+  url: https://www.bankunited.com/security
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
