@@ -31,6 +31,7 @@ tags:
 created: '2026-07-23'
 modified: '2026-07-23'
 specificationVersion: '0.19'
+# enrichment round 2026-07-23: OIDC discovery (well-known/authentication/scopes/conformance), domain security
 apis:
 - aid: bankunited:bankunited-api-experience-hub
   name: BankUnited API Experience Hub
@@ -42,12 +43,33 @@ apis:
     any OpenAPI/RAML specifications require portal registration/login and are
     not publicly downloadable; no anonymous API reference is exposed.
   humanURL: https://developer.bankunited.com/s/
+  baseURL: https://developer.bankunited.com/aeh/
   properties:
   - type: Documentation
     url: https://developer.bankunited.com/s/
   - type: SignUp
     url: https://developer.bankunited.com/aeh/s/login
+  - type: Authentication
+    url: authentication/bankunited-authentication.yml
+  - type: OpenIDConnect
+    url: https://developer.bankunited.com/aeh/.well-known/openid-configuration
 common:
+- type: DomainSecurity
+  url: security/bankunited-domain-security.yml
+- type: WellKnown
+  url: well-known/bankunited-well-known.yml
+- type: Authentication
+  url: authentication/bankunited-authentication.yml
+- type: OAuthScopes
+  url: scopes/bankunited-scopes.yml
+- type: Conformance
+  url: conformance/bankunited-conformance.yml
+- type: LLMsTxt
+  url: llms/bankunited-llms.txt
+- type: SignUp
+  url: https://developer.bankunited.com/aeh/s/login
+- type: Login
+  url: https://developer.bankunited.com/aeh/s/login
 - type: Website
   url: https://www.bankunited.com/
 - type: DeveloperPortal

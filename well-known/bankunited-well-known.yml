@@ -1,0 +1,46 @@
+generated: '2026-07-23'
+method: searched
+source: live probes of /.well-known/* on BankUnited hosts
+host: https://developer.bankunited.com
+notes: >-
+  The BankUnited "API Experience Hub" developer portal is a Salesforce Experience
+  Cloud site. The OpenID Connect discovery document is served anonymously at the
+  /aeh/ path (the root /.well-known/openid-configuration 301-redirects to
+  /aeh/.well-known/openid-configuration). All other portal .well-known paths and
+  API/spec endpoints return 401 and redirect to the portal login, so the API
+  catalog, OpenAPI/RAML contracts and OAuth server metadata sit behind
+  registration. The corporate site (www.bankunited.com) publishes no .well-known
+  discovery surface.
+documents:
+- path: /.well-known/openid-configuration
+  host: https://developer.bankunited.com
+  status: 301
+  note: redirects to /aeh/.well-known/openid-configuration
+- path: /aeh/.well-known/openid-configuration
+  host: https://developer.bankunited.com
+  status: 200
+  file: bankunited-openid-configuration.json
+  note: Salesforce Experience Cloud OIDC discovery (anonymous)
+- path: /aeh/id/keys
+  host: https://developer.bankunited.com
+  status: 200
+  note: JWKS (RS256 signing keys) referenced by jwks_uri
+- path: /.well-known/oauth-authorization-server
+  host: https://developer.bankunited.com
+  status: 401
+  note: gated behind portal login
+- path: /.well-known/oauth-protected-resource
+  host: https://developer.bankunited.com
+  status: 401
+- path: /.well-known/api-catalog
+  host: https://developer.bankunited.com
+  status: 401
+- path: /.well-known/security.txt
+  host: https://developer.bankunited.com
+  status: 401
+- path: /.well-known/security.txt
+  host: https://www.bankunited.com
+  status: 404
+- path: /.well-known/openid-configuration
+  host: https://www.bankunited.com
+  status: 404

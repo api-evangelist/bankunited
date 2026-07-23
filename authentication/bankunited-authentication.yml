@@ -1,0 +1,40 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.bankunited.com/aeh/.well-known/openid-configuration
+docs: https://developer.bankunited.com/s/
+notes: >-
+  Derived from the anonymously-published OpenID Connect discovery document of the
+  BankUnited API Experience Hub developer portal. The portal is a Salesforce
+  Experience Cloud site, so the auth surface is Salesforce's OAuth 2.0 / OpenID
+  Connect implementation: authorization code and implicit (token / id_token)
+  response types, RS256-signed ID tokens, token revocation, introspection,
+  userinfo and dynamic client registration endpoints. Developers register an app
+  in the portal to obtain client credentials; the specific product API scopes and
+  contracts are behind portal login. Client authentication supports
+  client_secret_post, client_secret_basic and private_key_jwt.
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode, implicit]
+  token_endpoint_auth_methods: [client_secret_post, client_secret_basic, private_key_jwt]
+  id_token_signing_alg: [RS256]
+  pkce: unknown
+schemes:
+- name: OpenIDConnect
+  type: openIdConnect
+  openIdConnectUrl: https://developer.bankunited.com/aeh/.well-known/openid-configuration
+  issuer: https://developer.bankunited.com/aeh
+  sources: [well-known/bankunited-openid-configuration.json]
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://developer.bankunited.com/aeh/services/oauth2/authorize
+    tokenUrl: https://developer.bankunited.com/aeh/services/oauth2/token
+  - flow: implicit
+    authorizationUrl: https://developer.bankunited.com/aeh/services/oauth2/authorize
+  revocationUrl: https://developer.bankunited.com/aeh/services/oauth2/revoke
+  introspectionUrl: https://developer.bankunited.com/aeh/services/oauth2/introspect
+  userinfoUrl: https://developer.bankunited.com/aeh/services/oauth2/userinfo
+  registrationUrl: https://developer.bankunited.com/aeh/services/oauth2/register
+  jwksUri: https://developer.bankunited.com/aeh/id/keys
+  sources: [well-known/bankunited-openid-configuration.json]

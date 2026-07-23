@@ -1,0 +1,43 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.bankunited.com/aeh/.well-known/openid-configuration
+notes: >-
+  Standards conformance asserted from the anonymously-published OIDC discovery
+  document of the BankUnited API Experience Hub. OAuth 2.0 and OpenID Connect are
+  confirmed by live discovery metadata (authorization/token/revocation/
+  introspection/userinfo/registration endpoints, RS256 id_token signing, JWKS).
+  No public first-party OpenAPI, FDX data-access API, or documented CFPB Section
+  1033 open-banking posture is available (the API catalog is portal-gated), so
+  banking-domain standards are recorded as not-evidenced rather than
+  non-conforming.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: OIDC discovery advertises authorization/token/revocation/introspection endpoints and multiple token_endpoint_auth_methods
+- id: oidc
+  conforms: true
+  evidence: /.well-known/openid-configuration present with issuer, userinfo_endpoint, RS256 id_token signing, jwks_uri
+- id: rfc7591-dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint advertised in OIDC discovery
+- id: rfc7009-token-revocation
+  conforms: true
+  evidence: revocation_endpoint advertised
+- id: rfc7662-token-introspection
+  conforms: true
+  evidence: introspection_endpoint advertised
+- id: rfc7523-private-key-jwt
+  conforms: true
+  evidence: token_endpoint_auth_methods_supported includes private_key_jwt
+- id: fapi
+  conforms: false
+  evidence: no FAPI security profile or PKCE/PAR metadata advertised
+- id: fdx
+  conforms: false
+  evidence: no public FDX-conformant data-access API documented
+- id: psd2
+  conforms: false
+  evidence: US bank; no PSD2 obligation or endpoints
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no public OpenAPI to evidence problem+json error responses

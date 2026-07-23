@@ -1,0 +1,58 @@
+generated: '2026-07-23'
+method: searched
+source: https://developer.bankunited.com/aeh/.well-known/openid-configuration
+docs: https://developer.bankunited.com/s/
+notes: >-
+  These scopes are the scopes_supported list advertised by the BankUnited API
+  Experience Hub OIDC discovery document. Because the portal runs on Salesforce
+  Experience Cloud, this list is the standard Salesforce OAuth 2.0 connected-app
+  scope catalog (openid/profile/email/api/refresh_token plus Salesforce platform
+  scopes such as cdp_*, wave_api, pardot_api, einstein_gpt_api, mcp_api) rather
+  than BankUnited-specific banking-product scopes. The product-level API
+  authorization scopes for BankUnited's own API contracts are defined per API and
+  sit behind portal registration/login. Captured verbatim, honestly flagged as
+  platform scopes.
+schemes:
+- name: OAuth2
+  source: well-known/bankunited-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://developer.bankunited.com/aeh/services/oauth2/authorize
+    tokenUrl: https://developer.bankunited.com/aeh/services/oauth2/token
+scopes:
+- {scope: openid, description: OpenID Connect authentication, category: identity}
+- {scope: profile, description: Basic profile claims, category: identity}
+- {scope: email, description: Email address claim, category: identity}
+- {scope: address, description: Address claim, category: identity}
+- {scope: phone, description: Phone number claim, category: identity}
+- {scope: id, description: Salesforce identity URL access, category: identity}
+- {scope: api, description: Access the platform REST/SOAP APIs, category: platform}
+- {scope: web, description: Web browser access to the connected app, category: platform}
+- {scope: full, description: Full access (all other scopes except refresh_token), category: platform}
+- {scope: refresh_token, description: Issue a refresh token, category: token}
+- {scope: offline_access, description: Offline access (refresh token), category: token}
+- {scope: lightning, description: Lightning Experience access, category: platform}
+- {scope: visualforce, description: Visualforce page access, category: platform}
+- {scope: content, description: Salesforce CRM content access, category: platform}
+- {scope: chatter_api, description: Chatter REST API access, category: platform}
+- {scope: wave_api, description: CRM Analytics (Wave) API access, category: platform}
+- {scope: eclair_api, description: CRM Analytics charting API access, category: platform}
+- {scope: pardot_api, description: Pardot / Account Engagement API access, category: platform}
+- {scope: einstein_gpt_api, description: Einstein GPT / generative AI API access, category: ai}
+- {scope: sfap_api, description: Salesforce AI platform API access, category: ai}
+- {scope: mcp_api, description: Model Context Protocol API access (Salesforce platform), category: ai}
+- {scope: interaction_api, description: Interaction Studio API access, category: platform}
+- {scope: scrt_api, description: Service cloud real-time API access, category: platform}
+- {scope: chatbot_api, description: Einstein Bots API access, category: platform}
+- {scope: user_registration_api, description: Self-registration API access, category: platform}
+- {scope: pwdless_login_api, description: Passwordless login API access, category: platform}
+- {scope: forgot_password, description: Forgot-password flow access, category: platform}
+- {scope: custom_permissions, description: Include custom permissions in the token, category: platform}
+- {scope: cdp_api, description: Data Cloud (CDP) API access, category: data-cloud}
+- {scope: cdp_query_api, description: Data Cloud query API access, category: data-cloud}
+- {scope: cdp_ingest_api, description: Data Cloud ingestion API access, category: data-cloud}
+- {scope: cdp_profile_api, description: Data Cloud profile API access, category: data-cloud}
+- {scope: cdp_segment_api, description: Data Cloud segmentation API access, category: data-cloud}
+- {scope: cdp_identityresolution_api, description: Data Cloud identity resolution API access, category: data-cloud}
+- {scope: cdp_calculated_insight_api, description: Data Cloud calculated insights API access, category: data-cloud}
+- {scope: data_cloud_user_claims, description: Data Cloud user claims, category: data-cloud}

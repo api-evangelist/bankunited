@@ -1,0 +1,30 @@
+# BankUnited
+
+> BankUnited, N.A. is an OCC-chartered national bank and the principal subsidiary of BankUnited, Inc. (NYSE: BKU), a ~$35B-asset regional commercial and consumer bank headquartered in Miami Lakes, Florida. Its API program is delivered through the "API Experience Hub" developer portal (developer.bankunited.com), a Salesforce Experience Cloud site backed by a MuleSoft Anypoint Exchange catalog. Developer registration, OAuth application provisioning and API contracts are self-service but gated behind portal login; the specific API products and OpenAPI/RAML specifications are not openly downloadable.
+
+## APIs
+- [BankUnited API Experience Hub](https://developer.bankunited.com/s/): First-party developer portal — self-service registration, OAuth app provisioning and API contract management (catalog behind login).
+
+## Authentication
+- [OpenID Connect discovery](https://developer.bankunited.com/aeh/.well-known/openid-configuration): Anonymous OIDC metadata — OAuth 2.0 authorization code + implicit flows, RS256 id_tokens, revocation/introspection/userinfo/dynamic-registration endpoints (Salesforce Experience Cloud identity).
+- [Portal login / sign up](https://developer.bankunited.com/aeh/s/login): Register a developer account and provision OAuth applications.
+
+## Docs
+- [Developer Portal](https://developer.bankunited.com/s/): API Experience Hub home.
+- [Corporate site](https://www.bankunited.com/): BankUnited banking site.
+- [Security](https://www.bankunited.com/security): Security information.
+- [Legal / Terms](https://www.bankunited.com/legal): Terms of service.
+- [Privacy](https://www.bankunited.com/privacy): Privacy policy.
+- [Resource Corner (Blog)](https://www.bankunited.com/resource-corner): Insights and articles.
+
+## Artifacts
+- [Well-Known index](https://raw.githubusercontent.com/api-evangelist/bankunited/refs/heads/main/well-known/bankunited-well-known.yml)
+- [OIDC discovery document](https://raw.githubusercontent.com/api-evangelist/bankunited/refs/heads/main/well-known/bankunited-openid-configuration.json)
+- [Authentication profile](https://raw.githubusercontent.com/api-evangelist/bankunited/refs/heads/main/authentication/bankunited-authentication.yml)
+- [OAuth scopes](https://raw.githubusercontent.com/api-evangelist/bankunited/refs/heads/main/scopes/bankunited-scopes.yml)
+- [Standards conformance](https://raw.githubusercontent.com/api-evangelist/bankunited/refs/heads/main/conformance/bankunited-conformance.yml)
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/bankunited/refs/heads/main/security/bankunited-domain-security.yml)
+
+## Notes
+- No public first-party OpenAPI/RAML, MCP server, SDKs, AsyncAPI/webhook spec, or CFPB Section 1033 / FDX data-access API is documented; the API catalog sits behind portal registration.
+- Consumer-permissioned account data is reached primarily through third-party aggregators (e.g. Plaid) rather than a public first-party consumer data API.
