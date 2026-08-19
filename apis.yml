@@ -41,7 +41,7 @@ tags:
 - Developer Portal
 created: '2026-07-23'
 modified: '2026-07-23'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 # enrichment round 2026-07-23: OIDC discovery (well-known/authentication/scopes/conformance), domain security
 apis:
 - aid: bankunited:bankunited-api-experience-hub
