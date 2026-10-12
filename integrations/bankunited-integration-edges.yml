@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/bankunited/integrations
+- https://n8n.io/integrations/bankunited/
+- https://composio.dev/toolkits/bankunited
+- https://monid.ai/tools/bankunited
+checked:
+- https://composio.dev/toolkits/bankunited
+- https://monid.ai/tools/bankunited
+- https://n8n.io/integrations/bankunited/
+- https://zapier.com/apps/bankunited/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
