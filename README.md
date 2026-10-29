@@ -1,4 +1,4 @@
-# BankUnited (bankunited)
+# BankUnited
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,53 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-BankUnited, N.A. is a national bank (OCC-chartered National Association) and the principal subsidiary of BankUnited, Inc. (NYSE: BKU), a bank holding company headquartered in Miami Lakes, Florida. With roughly $35 billion in total assets and banking centers across Florida, the New York metro area, Dallas, Atlanta, New Jersey and North Carolina, it is a mid-size regional commercial and consumer bank focused on business banking, commercial lending and treasury/depository services.
+BankUnited, N.A. is a national bank (OCC-chartered National Association) and the principal subsidiary of BankUnited, Inc. (NYSE: BKU), a bank holding company headquartered in Miami Lakes, Florida. With roughly $35 billion in total assets and banking centers across Florida, the New York metro area, Dallas, Atlanta, New Jersey and North Carolina, it is a mid-size regional commercial and consumer bank focused on business banking, commercial lending and treasury/depository services. On the open-finance front, BankUnited runs a first-party developer portal branded the "API Experience Hub" (developer.bankunited.com), a Salesforce Experience Cloud site fronting a MuleSoft Anypoint Exchange catalog with self-service registration, OAuth application provisioning and API contracts; the specific API products and any OpenAPI specifications sit behind portal registration/login rather than being openly downloadable. No FDX-conformant public data-access API or published CFPB Section 1033 posture is documented; consumer-permissioned account data is reached primarily through third-party aggregators (e.g. Plaid) rather than a public first-party consumer data API.
 
-On the open-finance front, BankUnited operates a first-party developer portal branded the "API Experience Hub" (developer.bankunited.com) — a Salesforce Experience Cloud site fronting a MuleSoft Anypoint Exchange catalog with self-service registration, OAuth application provisioning and API contracts. The specific API products and any OpenAPI specifications sit behind portal registration/login and are not openly downloadable. No FDX-conformant public data-access API or published CFPB Section 1033 posture is documented; consumer-permissioned account data is reached primarily through third-party aggregators (e.g. Plaid) rather than a public first-party consumer data API.
+**Areas:** Financial Services · Banking · United States · Regional Bank · Commercial Banking · Open Finance
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/bankunited/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/bankunited/refs/heads/main/apis.yml)
+## BankUnited on APIs.io
 
-## Tags
+Everything profiled for BankUnited is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bankunited/](https://apis.io/providers/bankunited/)** — or go straight to one of the APIs or properties below.
 
-- Financial Services
-- Banking
-- United States
-- Regional Bank
-- Commercial Banking
-- Open Finance
-- Developer Portal
+### APIs (1)
 
-## Timestamps
+- [BankUnited API Experience Hub](https://apis.io/apis/bankunited/bankunited-api-experience-hub/) — BankUnited's first-party developer portal ("API Experience Hub"), a Salesforce Experience Cloud site backed by MuleSoft Anypoint Exchange. Provides…
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### BankUnited API Experience Hub
+#### Security (2)
 
-BankUnited's first-party developer portal ("API Experience Hub"), a Salesforce Experience Cloud site backed by MuleSoft Anypoint Exchange. Provides self-service developer registration, OAuth application provisioning and API contract management. The underlying API catalog and any OpenAPI/RAML specifications require portal registration/login and are not publicly downloadable; no anonymous API reference is exposed.
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://developer.bankunited.com/s/](https://developer.bankunited.com/s/)
+- [Bankunited Authentication](https://apis.io/security/bankunited/bankunited-authentication/)
+- [Bankunited Domain Security](https://apis.io/security/bankunited/bankunited-domain-security/)
 
-#### Properties
+#### OAuth scopes (1)
 
-- [Documentation](https://developer.bankunited.com/s/)
-- [Sign Up](https://developer.bankunited.com/aeh/s/login)
+The permissions the API asks for.
 
-## Common Properties
+- [Bankunited Scopes](https://apis.io/scopes/bankunited/bankunited-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.bankunited.com/)
-- [Developer Portal](https://developer.bankunited.com/s/)
-- [Portal](https://developer.bankunited.com/aeh/s/)
-- [GitHub Organization](https://github.com/bankunited)
-- [LinkedIn](https://www.linkedin.com/company/bankunited)
 - [Blog](https://www.bankunited.com/resource-corner)
-- [Terms of Service](https://www.bankunited.com/legal)
-- [Privacy Policy](https://www.bankunited.com/privacy)
 - [Security](https://www.bankunited.com/security)
+- [Terms of service](https://www.bankunited.com/legal)
+- [Privacy policy](https://www.bankunited.com/privacy)
+- [GitHub](https://github.com/bankunited)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 24.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 27.6 |
+
+**Agent readiness 10.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 37.8** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bankunited/](https://apis.io/providers/bankunited/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for BankUnited: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bankunited/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
